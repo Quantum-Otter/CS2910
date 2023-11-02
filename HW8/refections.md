@@ -1,5 +1,5 @@
 Some of the things I learned during this tutorial, is how first hand to create and modify props in react, and how to use them to make a mode modular page
 
-I enjoyed using React as it made intuitive senese to me with how all the components interacted. This might just be because of the tutorial, either way I feel like the app made sense. 
+I enjoyed using React as it made intuitive senese to me with how all the components interacted. This might just be because of the tutorial doing a good job at explaining things, rather than just giving you code, either way I feel like the app made sense. The app also made sense to develop, and how to pass data between components with parent/child relationships
 
-I disliked having to figure out all of the instillation stuff on my own, however once it was set it wasn't too bad. 
+I disliked having to figure out all of the instillation stuff for the dependancies, but that was partially windows being windows. I really ended up disliking the fact that in order to recieve props, you must have nested functions. It feels like a work around to not have classes, when I would prefer that approach. I also didn't love how the way we were to set it up, forced functions and variable declarations to be intercut with eachother. Maybe this is just my brain, but I dislike the format of setting variables -> definig functions -> setting more variables. I would much prefer to have definitions consistent within themselves 
