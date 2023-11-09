@@ -1,8 +1,16 @@
 <!doctype html>
-<form name="publish">
-  <input type="text" name="message" maxlength="50"/>
-  <input type="submit" value="Send"/>
+
+<form name="publish" id="username">
+  <input type="text" name="username" value="USERNSME"/>
+  <input type="submit" value="Set Username"/>
 </form>
+
+<form name="publish" id="message">
+  <input type="text" name="message" maxlength="50"/>
+  <input type="submit" value="Send Message"/>
+</form>
+
+
 
 <div id="messages"></div>
 
@@ -13,14 +21,23 @@ let url = location.host == 'localhost' ?
   `wss://javascript.info/article/websocket/chat/ws`; // prod integration with javascript.info
 
 let socket = new WebSocket(url);
+let usernemeSocket = new WebSocket(url);
+
+let username="";
 
 // send message from the form
-document.forms.publish.onsubmit = function() {
+document.getElementById("message").onsubmit = function() {
   let outgoingMessage = this.message.value;
-
   socket.send(outgoingMessage);
   return false;
 };
+
+document.getElementById("username").onsubmit = function() {
+  username = this.username.value;
+  alert("USERNAME UPDATED")
+  return false;
+};
+
 
 // handle incoming messages
 socket.onmessage = function(event) {
@@ -33,7 +50,9 @@ socket.onclose = event => console.log(`Closed ${event.code}`);
 // show message in div#messages
 function showMessage(message) {
   let messageElem = document.createElement('div');
-  messageElem.textContent = message;
+  messageElem.textContent = username + ": " + message;
+  
+
   document.getElementById('messages').prepend(messageElem);
 }
 </script>
