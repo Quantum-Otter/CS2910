@@ -1,7 +1,7 @@
 <!doctype html>
 
 <form name="publish" id="username">
-  <input type="text" name="username" value="USERNSME"/>
+  <input type="text" name="username" value="<USERNAME>"/>
   <input type="submit" value="Set Username"/>
 </form>
 
@@ -32,6 +32,7 @@ document.getElementById("message").onsubmit = function() {
   return false;
 };
 
+//Set the users username 
 document.getElementById("username").onsubmit = function() {
   username = this.username.value;
   alert("USERNAME UPDATED")
